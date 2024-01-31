@@ -116,7 +116,7 @@ class _ScreenState extends State<Screen> {
                                     color: const Color(0xFFf0f4fa),
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
-                                      child: Container(
+                                      child: SizedBox(
                                         height: 300,
                                         width: 300,
                                         child: Image.network(
@@ -126,8 +126,9 @@ class _ScreenState extends State<Screen> {
                                               Widget child,
                                               ImageChunkEvent?
                                                   loadingProgress) {
-                                            if (loadingProgress == null)
+                                            if (loadingProgress == null) {
                                               return child;
+                                            }
                                             return Center(
                                               child: CircularProgressIndicator(
                                                 value: loadingProgress
@@ -213,8 +214,6 @@ class _ScreenState extends State<Screen> {
                               ],
                             );
                           } else {
-                            context.server.addToCount(-1);
-
                             return Container(
                               alignment: Alignment.center,
                               height: MediaQuery.of(context).size.height,
@@ -225,17 +224,17 @@ class _ScreenState extends State<Screen> {
                                   ),
                                   color: const Color(0xFFf0f4fa),
                                   child: Padding(
-                                    padding: EdgeInsets.all(20),
+                                    padding: const EdgeInsets.all(20),
                                     child: Text(
                                       dataResult.errorMessage,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         color: Colors.red,
                                       ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 ElevatedButton(
@@ -278,7 +277,6 @@ class _ScreenState extends State<Screen> {
                           }
                         }
                         if (state is DataErrorState) {
-                          context.server.addToCount(-1);
                           return Center(child: Text(state.error));
                         }
 
