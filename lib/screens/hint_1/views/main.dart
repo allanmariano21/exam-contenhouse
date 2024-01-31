@@ -9,7 +9,7 @@ class ViewState extends base.ViewState {
       child: ListView(
         children: [
           const SizedBox(height: 20),
-          Text(context.strings!.hint1Description),
+          Text(context.strings.hint1Description),
         ],
       ),
     );

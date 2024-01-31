@@ -16,7 +16,7 @@ class ViewState extends base.ViewState {
           Padding(
             padding: const EdgeInsets.all(32.0),
             child: Text(
-              context.strings!.hint2ErrorMessage,
+              context.strings.hint2ErrorMessage,
               style: context.texts.headlineMedium,
             ),
           ),

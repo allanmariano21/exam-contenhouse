@@ -24,7 +24,7 @@ class App extends StatelessWidget {
       builder: (context, _) {
         return MaterialApp(
           // app title
-          onGenerateTitle: (context) => context.strings!.appTitle,
+          onGenerateTitle: (context) => context.strings.appTitle,
 
           // backgrounding
           restorationScopeId: 'app', // restore Navigator for backgrounding

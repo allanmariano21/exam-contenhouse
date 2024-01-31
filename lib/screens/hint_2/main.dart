@@ -32,7 +32,7 @@ class _ScreenState extends State<Screen> {
           },
           child: Scaffold(
             appBar: AppBar(
-              title: Text(context.strings!.hint2AppbarTitle),
+              title: Text(context.strings.hint2AppbarTitle),
             ),
             body: SafeArea(
               child: base.BlocBuilder<Bloc, view.ViewState>(
