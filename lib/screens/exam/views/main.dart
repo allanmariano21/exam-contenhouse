@@ -11,7 +11,6 @@ import 'package:mobile_exam/screens/exam/data_state.dart';
 class ViewState extends base.ViewState {
   @override
   Widget content(BuildContext context) {
-    final arg = context.arguments;
     return RepositoryProvider(
       create: (context) => DataRepository(),
       child: BlocProvider(
@@ -39,13 +38,13 @@ class ViewState extends base.ViewState {
                           onPressed: () {
                             context.server.addToCount(1);
                           },
-                          child: Text('Add Count'))
+                          child: const Text('Add Count'))
                     ],
                   );
                 }
               }
               if (state is DataErrorState) {
-                return Center(child: Text("Error"));
+                return const Center(child: Text("Error"));
               }
 
               return Container();
